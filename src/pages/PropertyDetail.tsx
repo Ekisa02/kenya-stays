@@ -3,6 +3,7 @@ import { ArrowLeft, Star, MapPin, Heart, Share, Wifi, Car, Waves, Dumbbell, Uten
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import BookingCard from "@/components/BookingCard";
 import { properties, reviews } from "@/data/properties";
 
 const amenityIcons: Record<string, React.ReactNode> = {
