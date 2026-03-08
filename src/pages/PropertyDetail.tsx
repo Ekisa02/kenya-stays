@@ -152,7 +152,6 @@ const PropertyDetail = () => {
           <div className="lg:col-span-1">
             <BookingCard property={property} />
           </div>
-          </div>
         </div>
       </div>
 
