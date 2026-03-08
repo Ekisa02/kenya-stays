@@ -3,6 +3,7 @@ import { ArrowLeft, Star, MapPin, Heart, Share, Wifi, Car, Waves, Dumbbell, Uten
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import BookingCard from "@/components/BookingCard";
 import { properties, reviews } from "@/data/properties";
 
 const amenityIcons: Record<string, React.ReactNode> = {
@@ -149,50 +150,7 @@ const PropertyDetail = () => {
 
           {/* Booking card */}
           <div className="lg:col-span-1">
-            <div className="sticky top-24 rounded-2xl border border-border bg-card p-6 shadow-card">
-              <div className="flex items-baseline gap-1 mb-6">
-                <span className="font-display text-2xl font-bold text-foreground">${property.price}</span>
-                <span className="text-muted-foreground text-sm">/ night</span>
-              </div>
-
-              <div className="rounded-xl border border-border overflow-hidden mb-4">
-                <div className="grid grid-cols-2">
-                  <div className="p-3 border-r border-b border-border">
-                    <label className="text-xs font-semibold text-foreground uppercase">Check-in</label>
-                    <p className="text-sm text-muted-foreground mt-0.5">Add date</p>
-                  </div>
-                  <div className="p-3 border-b border-border">
-                    <label className="text-xs font-semibold text-foreground uppercase">Checkout</label>
-                    <p className="text-sm text-muted-foreground mt-0.5">Add date</p>
-                  </div>
-                </div>
-                <div className="p-3">
-                  <label className="text-xs font-semibold text-foreground uppercase">Guests</label>
-                  <p className="text-sm text-muted-foreground mt-0.5">1 guest</p>
-                </div>
-              </div>
-
-              <button className="w-full rounded-xl bg-primary text-primary-foreground py-3 font-semibold text-sm transition-transform hover:scale-[1.02] active:scale-[0.98]">
-                Reserve
-              </button>
-
-              <p className="text-center text-xs text-muted-foreground mt-3">You won't be charged yet</p>
-
-              <div className="mt-4 pt-4 border-t border-border space-y-2 text-sm">
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">${property.price} × 5 nights</span>
-                  <span className="text-foreground">${property.price * 5}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">Service fee</span>
-                  <span className="text-foreground">${Math.round(property.price * 5 * 0.12)}</span>
-                </div>
-                <div className="flex justify-between pt-2 border-t border-border font-semibold">
-                  <span className="text-foreground">Total</span>
-                  <span className="text-foreground">${property.price * 5 + Math.round(property.price * 5 * 0.12)}</span>
-                </div>
-              </div>
-            </div>
+            <BookingCard property={property} />
           </div>
         </div>
       </div>
